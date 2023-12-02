@@ -5,6 +5,7 @@ from serpapi import GoogleSearch
 
 load_dotenv()
 
+
 class Scraper:
     countries = {
         "Angola": "ao",
@@ -59,7 +60,8 @@ class Scraper:
     def __init__(self, country):
         self.country = country
         self.params = {
-            'api_key': os.getenv('SERPAPI_KEY'),        # https://serpapi.com/manage-api-key
+            # https://serpapi.com/manage-api-key
+            'api_key': os.getenv('SERPAPI_KEY'),
             'uule': 'w+CAIQICINVW5pdGVkIFN0YXRlcw',		# encoded location (USA)
             'q': f'Water jobs in {self.country}',       # search query
             'hl': 'en',                         		# language of the search
