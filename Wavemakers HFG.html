@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta http-equiv="CACHE-CONTROL" content="NO-CACHE">
+        <title>Wavemakers HFG</title>
+        <link rel="stylesheet" type="text/css" href="Wavemakers%20HFG_files/start.css">
+    </head>
+    <body>
+        <div>
+            <h1>Hackathon for Good: Wavemakers Project</h1>
+            <p>
+                Over the course of this hackathon we have looked at a 
+lot of different datasets related to the level of access to water in the
+ region of Sub-Saharan Africa.
+            </p>
+            <p>
+                We started with data from the United Nations regarding <a href="https://www.sdg6data.org/en/tables">SDG6</a>.
+                From this data we were able to use python to create several maps.
+                The geographical data for making these maps was taken from the GitHub project <a href="https://github.com/datasets/geo-countries/blob/master/data/countries.geojson">geo-countries</a>.
+            </p>
+            <img src="Wavemakers%20HFG_files/Access_to_safe_water.png" alt="Data Map" height="700" class="center">
+            <img src="Wavemakers%20HFG_files/Access_to_basic_water.png" alt="Data Map" height="700" class="center">
+            <img src="Wavemakers%20HFG_files/Access_to_improved_water.png" alt="Data Map" height="700" class="center">
+
+            <p>
+                We also looked at data collected by the OECD regarding development assistance.
+                The values given are adjusted for inflation based on the value of USD in 2017.
+            </p>
+            <img src="Wavemakers%20HFG_files/spending.png" alt="Data Map" height="420" class="center">
+
+            <p>
+                Finally we scraped the web for current water related job postings in Sub-Saharan Africa.
+                This gives us a rough idea of how many water jobs might be available in each country as of this weekend.
+                The data was scraped from <a href="https://www.joshswaterjobs.com/">Josh's Water Jobs</a>.
+                South-Africa had 140 water related jobs, but we opted to
+ omit it from this map as it made the data in other countries harder to 
+read.
+            </p>
+            <img src="Wavemakers%20HFG_files/Water_Jobs.png" alt="Data Map" height="700" class="center">
+        </div>
+    <!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+</body></html>
